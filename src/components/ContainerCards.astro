@@ -1,0 +1,176 @@
+---
+import CardSwitch from './CardSwitch.astro';
+
+const arrayCards = [
+  {
+    title: 'Ticket ViteConfig 2030',
+    repo: 'https://github.com/20essentials/project-000-099',
+    web: 'https://20essentials.github.io/project-000-099/',
+    localImage: './assets/n99.avif',
+    id: '001'
+  },
+  {
+    title: 'Move Camera',
+    repo: 'https://github.com/20essentials/project-000-112',
+    web: 'https://20essentials.github.io/project-000-112/',
+    localImage: './assets/n112.avif',
+    id: '002'
+  },
+  {
+    title: 'Patron',
+    repo: 'https://github.com/20essentials/project-000-119',
+    web: 'https://20essentials.github.io/project-000-119/',
+    localImage: './assets/n119.avif',
+    id: '003'
+  },
+  {
+    title: 'Card Hover',
+    repo: 'https://github.com/20essentials/project-000-125',
+    web: 'https://20essentials.github.io/project-000-125/',
+    localImage: './assets/n125.avif',
+    id: '004'
+  },
+  {
+    title: 'Container Button 3D',
+    repo: 'https://github.com/20essentials/project-000-134',
+    web: 'https://20essentials.github.io/project-000-134/',
+    localImage: './assets/n134.avif',
+    id: '005'
+  },
+  {
+    title: 'Wall Prism',
+    repo: 'https://github.com/20essentials/project-000-140',
+    web: 'https://20essentials.github.io/project-000-140/',
+    localImage: './assets/n140.avif',
+    id: '006'
+  },
+  {
+    title: 'Conduct Move',
+    repo: 'https://github.com/20essentials/project-000-147',
+    web: 'https://20essentials.github.io/project-000-147/',
+    localImage: './assets/n147.avif',
+    id: '007'
+  },
+  {
+    title: 'Social Media Menu',
+    repo: 'https://github.com/20essentials/project-000-159',
+    web: 'https://20essentials.github.io/project-000-159/',
+    localImage: './assets/n159.avif',
+    id: '008'
+  },
+  {
+    title: 'Building Example',
+    repo: 'https://github.com/20essentials/project-000-166',
+    web: 'https://20essentials.github.io/project-000-166/',
+    localImage: './assets/n166.avif',
+    id: '009'
+  },
+  {
+    title: 'Minej',
+    repo: 'https://github.com/20essentials/project-000-173',
+    web: 'https://20essentials.github.io/project-000-173/',
+    localImage: './assets/n173.avif',
+    id: '010'
+  },
+  {
+    title: 'Smith',
+    repo: 'https://github.com/20essentials/project-000-179',
+    web: 'https://20essentials.github.io/project-000-179/',
+    localImage: './assets/n179.avif',
+    id: '011'
+  },
+  {
+    title: 'Background Rtl',
+    repo: 'https://github.com/20essentials/project-000-185',
+    web: 'https://20essentials.github.io/project-000-185/',
+    localImage: './assets/n185.avif',
+    id: '012'
+  },
+  {
+    title: 'Trim',
+    repo: 'https://github.com/20essentials/project-000-191',
+    web: 'https://20essentials.github.io/project-000-191/',
+    localImage: './assets/n191.avif',
+    id: '013'
+  },
+  {
+    title: 'Background Wav',
+    repo: 'https://github.com/20essentials/project-000-196',
+    web: 'https://20essentials.github.io/project-000-196/',
+    localImage: './assets/n196.avif',
+    id: '014'
+  },
+  {
+    title: 'Image Slint',
+    repo: 'https://github.com/20essentials/project-000-202',
+    web: 'https://20essentials.github.io/project-000-202/',
+    localImage: './assets/n202.avif',
+    id: '015'
+  },
+  {
+    title: 'Square T4',
+    repo: 'https://github.com/20essentials/project-000-209',
+    web: 'https://20essentials.github.io/project-000-209/',
+    localImage: './assets/n209.avif',
+    id: '016'
+  },
+  {
+    title: 'Money',
+    repo: 'https://github.com/20essentials/project-000-216',
+    web: 'https://20essentials.github.io/project-000-216/',
+    localImage: './assets/n216.avif',
+    id: '017'
+  },
+  {
+    title: 'Cube',
+    repo: 'https://github.com/20essentials/project-000-225',
+    web: 'https://20essentials.github.io/project-000-225/',
+    localImage: './assets/n225.avif',
+    id: '018'
+  },
+  {
+    title: 'Hexagonal Pyramid',
+    repo: 'https://github.com/20essentials/project-000-234',
+    web: 'https://20essentials.github.io/project-000-234/',
+    localImage: './assets/n234.avif',
+    id: '019'
+  },
+  {
+    title: 'Fin',
+    repo: 'https://github.com/20essentials/project-000-239',
+    web: 'https://20essentials.github.io/project-000-239/',
+    localImage: './assets/n239.avif',
+    id: '020'
+  }
+];
+---
+
+<section>
+  {
+    arrayCards.map(({ id, localImage, repo, title, web }) => {
+      return (
+        <CardSwitch
+          id={id}
+          localImage={localImage}
+          repo={repo}
+          title={title}
+          web={web}
+        />
+      );
+    })
+  }
+</section>
+
+<style>
+  section {
+    min-height: 100vh;
+    display: grid;
+    padding: 2.2vmax;
+    gap: 2.2vmax;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27vmax, 1fr));
+    overflow-x: hidden;
+    place-items: center;
+    place-content: center;
+  }
+</style>

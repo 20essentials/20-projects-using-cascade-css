@@ -1,0 +1,66 @@
+<section>
+  <h1>
+    20 PROJECTS USING CASCADE CSS <img
+      src='./assets/cascada.png'
+      alt='css cascada logo'
+    />
+  </h1>
+</section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes swing {
+    20% {
+      transform: translate(-50%, -50%) rotate(15deg);
+    }
+    40% {
+      transform: translate(-50%, -50%) rotate(-10deg);
+    }
+    60% {
+      transform: translate(-50%, -50%) rotate(5deg);
+    }
+    80% {
+      transform: translate(-50%, -50%) rotate(-5deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+  }
+
+  section {
+    height: 100vh;
+  }
+
+  h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5vmax;
+    text-align: center;
+    text-wrap: balance;
+    color: transparent;
+    background-image: var(--gradient-btn);
+    background-clip: text;
+    animation:
+      fadeIn 1s ease-in-out,
+      swing 2s ease-in-out;
+
+    @media (width <= 1111px) {
+      line-height: 1.5;
+    }
+
+    img {
+      width: 4vmax;
+      transform: translateY(0.2vmax);
+    }
+  }
+</style>

@@ -1,0 +1,92 @@
+---
+import '@/styles/global.css';
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='./assets/favicon.webp' />
+    <title>20 Projects Using Cascade CSS</title>
+  </head>
+  <body>
+    <div class='holographic-pattern'>
+      <span class='shine-overlay'></span>
+      <svg class='texture-filter'>
+        <filter id='holo-texture'>
+          <feTurbulence
+            result='noise'
+            numOctaves='2'
+            baseFrequency='0.8'
+            type='fractalNoise'></feTurbulence>
+          <feSpecularLighting
+            result='specular'
+            lighting-color='#e0e7ff'
+            specularExponent='30'
+            specularConstant='0.7'
+            surfaceScale='1.5'
+            in='noise'
+          >
+            <fePointLight z='80' y='100' x='100'></fePointLight>
+          </feSpecularLighting>
+          <feComposite
+            result='litNoise'
+            operator='over'
+            in2='SourceGraphic'
+            in='specular'></feComposite>
+          <feBlend mode='screen' in2='litNoise' in='SourceGraphic'></feBlend>
+        </filter>
+      </svg>
+    </div>
+
+    <slot />
+  </body>
+</html>
+
+<style>
+  .holographic-pattern {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      160deg,
+      #8ebbff,
+      #0037ff 40%,
+      #8800ff 80%,
+      #c300ff
+    );
+    filter: url(#holo-texture);
+    position: fixed;
+    z-index: -3;
+  }
+
+  .shine-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      transparent 40%,
+      rgba(227, 79, 79, 0.073) 50%,
+      transparent 60%
+    );
+    background-size: 200%;
+    animation: shimmer 5s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+</style>
+
+<!-- <script>
+  window.addEventListener('resize', e => {
+    document.title = `${window.innerWidth}`;
+  });
+</script>
+ -->
